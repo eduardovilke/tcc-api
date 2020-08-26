@@ -6,7 +6,7 @@ const Model = use('Model')
 class Avaliacao extends Model {
     
     servico (){
-        return this.hasOne('App/Models/Servico')
+        return this.belongsTo('App/Models/Servico')
     }
 }
 

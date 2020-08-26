@@ -19,6 +19,10 @@ class Servico extends Model {
     situacao(){
         return this.hasOne('App/Models/Situacao')
     }
+    
+    tipo_servico(){
+        return this.hasOne('App/Models/TiposServico')
+    }
 }
 
 module.exports = Servico

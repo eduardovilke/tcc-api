@@ -5,7 +5,7 @@ const Model = use('Model')
 
 class TiposServico extends Model {
     servico (){
-        return this.hasMany('App/Models/Servico')
+        return this.belongsToMany('App/Models/Servico')
     }
 }
 

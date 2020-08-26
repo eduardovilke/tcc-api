@@ -16,7 +16,7 @@ class Cliente extends Model {
   }
 
   servico(){
-    return this.hasOne('App/Models/Servico')
+    return this.belongsToMany('App/Models/Servico')
   }
 
   tokens () {
