@@ -9,8 +9,8 @@ class Cliente extends Model {
     super.boot()
 
     this.addHook('beforeSave', async (userInstance) => {
-      if (userInstance.dirty.password) {
-        userInstance.password = await Hash.make(userInstance.password)
+      if (userInstance.dirty.senha) {
+        userInstance.senha = await Hash.make(userInstance.senha)
       }
     })
   }
