@@ -15,6 +15,7 @@ class ServicoSchema extends Schema {
       table.integer('situacao_id').unsigned().references('id').inTable('situacao').notNullable()
       table.integer('cliente_id').unsigned().references('id').inTable('clientes').notNullable()
       table.integer('prestador_id').unsigned().references('id').inTable('prestador_servicos').notNullable()
+      table.timestamps('updated_at')
     })
   }
 

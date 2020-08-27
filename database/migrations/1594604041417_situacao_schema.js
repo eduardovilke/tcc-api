@@ -8,6 +8,7 @@ class SituacaoSchema extends Schema {
     this.create('situacao', (table) => {
       table.increments()
       table.string('nome', 255)
+      table.timestamps('updated_at')
     })
   }
 

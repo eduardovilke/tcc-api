@@ -10,6 +10,7 @@ class AvaliacaoSchema extends Schema {
       table.string('descricao', 255)
       table.integer('nota')
       table.integer('servico_id').unsigned().references('id').inTable('servicos').notNullable()
+      table.timestamps('updated_at')
     })
   }
 

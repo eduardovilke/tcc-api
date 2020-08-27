@@ -9,6 +9,7 @@ class TipoSchema extends Schema {
       table.increments()
       table.string('nome', 255)
       table.string('descricao', 255)
+      table.timestamps('updated_at')
     })
   }
 
