@@ -2,9 +2,9 @@
 
 const Schema = use('Schema')
 
-class AvaliacaoSchema extends Schema {
+class AvaliacaosSchema extends Schema {
   up () {
-    this.create('avaliacao', (table) => {
+    this.create('avaliacaos', (table) => {
       table.increments()
       table.string('descricao', 255)
       table.integer('nota')
@@ -14,8 +14,8 @@ class AvaliacaoSchema extends Schema {
   }
 
   down () {
-    this.drop('avaliacao')
+    this.drop('avaliacaos')
   }
 }
 
-module.exports = AvaliacaoSchema
+module.exports = AvaliacaosSchema

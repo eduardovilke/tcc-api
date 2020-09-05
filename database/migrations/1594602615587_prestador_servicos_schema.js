@@ -16,6 +16,7 @@ class PrestadorServicoSchema extends Schema {
       table.string('bairro', 255)
       table.string('numero', 255)
       table.string('senha', 60).notNullable()
+      table.timestamps('updated_at')
     })
   }
 

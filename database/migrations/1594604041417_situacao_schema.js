@@ -2,9 +2,9 @@
 
 const Schema = use('Schema')
 
-class SituacaoSchema extends Schema {
+class SituacaosSchema extends Schema {
   up () {
-    this.create('situacao', (table) => {
+    this.create('situacaos', (table) => {
       table.increments()
       table.string('nome', 255)
       table.timestamps('updated_at')
@@ -12,8 +12,8 @@ class SituacaoSchema extends Schema {
   }
 
   down () {
-    this.drop('situacao')
+    this.drop('situacaos')
   }
 }
 
-module.exports = SituacaoSchema
+module.exports = SituacaosSchema
