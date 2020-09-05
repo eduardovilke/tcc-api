@@ -1,31 +1,11 @@
-# Adonis fullstack application
+# API para trabalho de conclusão de curso
 
-This is the fullstack boilerplate for AdonisJs, it comes pre-configured with.
+Este projeto tem como finalidade a criação da API para o TCC de Eduardo Dos Santos Vilke do curso de Ciência da Computação da Universidade Comunitária da região de Chapecó - UNOCHAPECÓ
 
-1. Bodyparser
-2. Session
-3. Authentication
-4. Web security middleware
-5. CORS
-6. Edge template engine
-7. Lucid ORM
-8. Migrations and seeds
+## Comandos após clonar o projeto
 
-## Setup
-
-Use the adonis command to install the blueprint
+Certifique-se de ter instalado o CLI do Adonis, e o banco de dados Mysql, então rode:
 
 ```bash
-adonis new yardstick
-```
-
-or manually clone the repo and then run `npm install`.
-
-
-### Migrations
-
-Run the following command to run startup migrations.
-
-```js
-adonis migration:run
+adonis serve --dev
 ```
