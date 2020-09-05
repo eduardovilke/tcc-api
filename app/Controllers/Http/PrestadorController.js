@@ -1,5 +1,7 @@
 'use strict'
 
+const ClienteController = require("./ClienteController")
+
 const Prestador = use("App/Models/PrestadorServico")
 class PrestadorController {
   async index(){
@@ -7,7 +9,7 @@ class PrestadorController {
   }
 
   async show({ params }){
-    const prestador = await Presador.findOrFail(params.id)
+    const prestador = await Prestador.findOrFail(params.id)
     return prestador
   }
 
@@ -17,12 +19,27 @@ class PrestadorController {
     return prestador
   }
 
-  async update(){
-
+  async update({ params, request }){
+    const data = request.only([
+      "nome",
+      "sobrenome",
+      "telefone",
+      "cep",
+      "cidade",
+      "rua",
+      "bairro",
+      "numero",
+      "senha"
+    ])
+    const prestador = await Prestador.findOrFail(params.id)
+    prestador.merge(data)
+    await prestador.save()
+    return prestador
   }
 
-  async delete(){
-
+  async destroy({ params }){
+    const prestador = await Prestador.findOrFail(params.id)
+    return await prestador.delete()
   }
 }
 
