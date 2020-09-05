@@ -20,7 +20,7 @@ class Servico extends Model {
         return this.hasOne('App/Models/Situacao')
     }
     
-    tipo_servico(){
+    tipos_servico(){
         return this.hasOne('App/Models/TiposServico')
     }
 }
