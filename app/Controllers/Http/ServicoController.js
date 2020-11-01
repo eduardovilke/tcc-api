@@ -8,7 +8,7 @@ class ServicoController {
   }
 
   async show({ params }){
-    const servico = await Servico.findOrFail(params.id)
+    const servico = await Servico.query().where('cliente_id', params.id).fetch()
     return servico
   }
 
