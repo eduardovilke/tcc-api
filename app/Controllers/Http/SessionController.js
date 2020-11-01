@@ -1,9 +1,13 @@
 'use strict'
 
+const Cliente = use('App/Models/Cliente')
+
 class SessionController {
   async create ({ request, auth }) { 
     const { email, senha } = request.all()
-    return await auth.attempt(email, senha)
+    let token = await auth.attempt(email, senha)
+    let user = await Cliente.query().where('email', email).fetch()
+    return {token, user};
   }
 }
 
