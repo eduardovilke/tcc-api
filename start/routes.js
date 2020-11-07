@@ -14,4 +14,5 @@ Route.resource('avaliacao', 'AvaliacaoController').apiOnly()
 Route.resource('servico', 'ServicoController').apiOnly()
 Route.resource('situacao', 'SituacaoController').apiOnly()
 Route.resource('tipo', 'TipoController').apiOnly()
+Route.resource('usuario', 'UserController').apiOnly()
 
