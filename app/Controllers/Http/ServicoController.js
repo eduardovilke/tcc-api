@@ -8,12 +8,22 @@ class ServicoController {
   }
 
   async show({ params }){
-    const servico = await Servico.query().where('cliente_id', params.id).fetch()
-    return servico
+    console.log(params)
+    if(params.user > 0){
+      const servico = await Servico.query().where('cliente_id', params.user).fetch()
+      return servico
+    }else if(params.types){
+      const tipos = params.types.replace('%20', '')
+      console.log(tipos)
+      const servico = await Servico.query().whereIn('tipos_servico_id', [tipos]).fetch()
+      return servico
+    }
+    
   }
 
   async store({ request }){
     const data = request.all()
+    console.log(data)
     const servico = await Servico.create(data)
     return servico
   }

@@ -15,6 +15,7 @@ class UserController {
     const data = request.all()
     const user = await User.create(data)
     return user
+    
   }
 
   async update({params, request}){

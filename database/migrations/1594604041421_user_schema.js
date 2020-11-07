@@ -17,7 +17,7 @@ class UsersSchema extends Schema {
       table.string('numero', 255)
       table.string('senha', 60).notNullable()
       table.string('tipo_usuario', 60)
-      table.string('tipos_servicos', 60)
+      table.json('tipos_servicos', 60)
       table.timestamps('updated_at')
     })
   }
