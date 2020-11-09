@@ -18,6 +18,6 @@ Route.resource('usuario', 'UserController').apiOnly()
 Route.post('servico', 'ServicoController.store')
 Route.get('servico/:user?/:types?', 'ServicoController.show')
 Route.get('servico', 'ServicoController.index')
-Route.put('servico', 'ServicoController.update')
+Route.put('servico/:id', 'ServicoController.update')
 Route.delete('servico', 'ServicoController.destroy')
 
