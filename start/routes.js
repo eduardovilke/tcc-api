@@ -6,18 +6,18 @@ Route.get('/', () => {
   return {status: 'online'}
 })
 
+Route.resource('usuario', 'UserController').apiOnly()
 Route.post('/sessions', 'SessionController.create')
 
-Route.resource('cliente', 'ClienteController').apiOnly()
-Route.resource('prestador', 'PrestadorController').apiOnly()
-Route.resource('avaliacao', 'AvaliacaoController').apiOnly()
-Route.resource('situacao', 'SituacaoController').apiOnly()
-Route.resource('tipo', 'TipoController').apiOnly()
-Route.resource('usuario', 'UserController').apiOnly()
+Route.resource('cliente', 'ClienteController').apiOnly().middleware('auth:jwt')
+Route.resource('prestador', 'PrestadorController').apiOnly().middleware('auth:jwt')
+Route.resource('avaliacao', 'AvaliacaoController').apiOnly().middleware('auth:jwt')
+Route.resource('situacao', 'SituacaoController').apiOnly().middleware('auth:jwt')
+Route.resource('tipo', 'TipoController').apiOnly().middleware('auth:jwt')
 
-Route.post('servico', 'ServicoController.store')
-Route.get('servico/:user?/:types?', 'ServicoController.show')
-Route.get('servico', 'ServicoController.index')
-Route.put('servico/:id', 'ServicoController.update')
-Route.delete('servico', 'ServicoController.destroy')
+Route.post('servico', 'ServicoController.store').middleware('auth:jwt')
+Route.get('servico/:user?/:types?', 'ServicoController.show').middleware('auth:jwt')
+Route.get('servico', 'ServicoController.index').middleware('auth:jwt')
+Route.put('servico/:id', 'ServicoController.update').middleware('auth:jwt')
+Route.delete('servico', 'ServicoController.destroy').middleware('auth:jwt')
 
