@@ -8,13 +8,12 @@ class ServicoController {
   }
 
   async show({ params }){
-    console.log(params)
     if(params.user > 0){
       const servico = await Servico.query().where('cliente_id', params.user).fetch()
+      console.log(servico.rows)
       return servico
     }else if(params.types){
       const tipos = params.types.replace('%20', '')
-      console.log(tipos)
       const servico = await Servico.query().whereIn('tipos_servico_id', [tipos]).fetch()
       return servico
     }
