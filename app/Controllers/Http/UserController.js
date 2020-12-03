@@ -12,10 +12,23 @@ class UserController {
   }
 
   async store({ request }){
-    const data = request.all()
+    const data = request.only([
+      "bairro",
+      "cep",
+      "cidade",
+      "email",
+      "nome",
+      "numero",
+      "rua",
+      "senha",
+      "sobrenome",
+      "telefone",
+      "tipo_usuario",
+      "tipos_servicos"
+    ])
+    console.log(data)
     const user = await User.create(data)
     return user
-    
   }
 
   async update({params, request}){
