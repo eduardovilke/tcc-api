@@ -8,8 +8,8 @@ class Servico extends Model {
         return this.hasOne('App/Models/avaliacao')
     }
 
-    cliente(){
-        return this.hasOne('App/Models/Cliente')
+    user(){
+        return this.hasOne('App/Models/User')
     }
 
     prestadorServico(){
